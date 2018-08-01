@@ -1,9 +1,13 @@
 filetype on
 syntax on
-colorscheme Tomorrow-Night
+set t_Co=256
+colorscheme stellarized
+set background=dark
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'derekwyatt/vim-scala'
+Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ddollar/nerdcommenter'
@@ -15,17 +19,23 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
+Plug 'nightsense/stellarized'
 
 call plug#end()
-
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
 set backspace=indent,eol,start
-set guifont=Menlo\ Regular:h18
+set guifont=Menlo\ Regular:h16
 set lines=35 columns=150
-set colorcolumn=150
 set number
 
 let mapleader=" "
 map <leader>s :source ~/.vimrc<CR>
+map <leader>f :Files<CR>
+map <leader>tn :tabe<CR>
+map <leader>t :tabn<CR>
+inoremap <c-z> <esc>:stop<cr>
 
 set hidden
 set history=100
