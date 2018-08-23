@@ -6,6 +6,7 @@ set background=dark
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'vim-scripts/bash-support.vim'
 Plug 'derekwyatt/vim-scala'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -68,4 +69,3 @@ nmap <leader>j :NERDTreeFind<CR>
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
-
